@@ -1,12 +1,9 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import _ from 'lodash';
-import Images from './Images';
-import { getData } from "../actions/index";
-import { DATA_LOADED } from '../constants/action-types';
-import { URL } from '../constants/action-types';
+import React, { Component } from "react"
+import isEmpty from 'lodash/isEmpty'
+import Images from '../containers/Images'
+import { DATA_LOADED, URL } from '../constants/action-types'
 //---------------------------------------------------------------------------
-export class Post extends Component {
+export default class Post extends Component {
     //---------------------------------------------------------------------------
     componentDidMount() {
         // calling the new action creator
@@ -14,24 +11,10 @@ export class Post extends Component {
     }
     //---------------------------------------------------------------------------
     render() {
-        let component_load = null;
-        if(!_.isEmpty(this.props.dogs))
-            component_load = <Images/>
+        const { loading } = this.props
         
         return (
-            component_load
+            !loading && <Images/>
         );
     }
 }
-//---------------------------------------------------------------------------
-function mapStateToProps(state) {
-    return {
-        dogs: state.dogs,
-        dogs_images: state.dogs_images
-    };
-}
-//---------------------------------------------------------------------------
-export default connect(
-    mapStateToProps,
-    { getData }
-)(Post);

@@ -1,15 +1,11 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import _ from 'lodash';
-import Chart from './ChartPie';
-import { getData } from "../actions/index";
-import { DATA_IMAGE_LOADED } from '../constants/action-types';
-import { URL_IMAGE } from '../constants/action-types';
-import { IMAGES } from '../constants/action-types';
+import React, { Component } from "react"
+import _ from 'lodash'
+import Chart from './ChartPie'
+import { DATA_IMAGE_LOADED, URL_IMAGE, IMAGES } from '../constants/action-types'
 //---------------------------------------------------------------------------
 let count = 0;
 //---------------------------------------------------------------------------
-export class Images extends Component {
+export default class Images extends Component {
     //---------------------------------------------------------------------------
     componentDidMount() {
         let dogs = this.props.dogs;
@@ -23,8 +19,8 @@ export class Images extends Component {
     render() {
         let chart_load = null;
 
-        if(count === _.size(this.props.dogs_images) && _.size(this.props.dogs_images) !== 0){
-            chart_load = <Chart/>
+        if(count === _.size(this.props.dogsImages) && _.size(this.props.dogsImages) !== 0){
+            chart_load = <Chart dogsImages={this.props.dogsImages}/>
         }
 
         return (
@@ -34,15 +30,3 @@ export class Images extends Component {
         );
     }
 }
-//---------------------------------------------------------------------------
-function mapStateToProps(state) {
-    return {
-        dogs: state.dogs,
-        dogs_images: state.dogs_images
-    };
-}
-//---------------------------------------------------------------------------
-export default connect(
-    mapStateToProps,
-    { getData }
-)(Images);
