@@ -1,7 +1,8 @@
 import React, { Component } from "react"
 import size from 'lodash/size'
 import Chart from './ChartPie'
-import { DATA_IMAGE_LOADED, URL_IMAGE, IMAGES } from '../constants/action-types'
+import { URL_IMAGE, IMAGES } from '../constants'
+import { DATA_IMAGE_LOADED } from '../constants/action-types'
 
 export default class Images extends Component {
 

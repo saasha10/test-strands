@@ -1,7 +1,7 @@
 import orderBy from 'lodash/orderBy'
 import forEach from 'lodash/forEach'
 import Chart from 'chart.js'
-import { COLORS } from '../constants/action-types'
+import { COLORS } from '../constants'
 
 function createChart ({dogsImages}) {
     let labelsChart = []
