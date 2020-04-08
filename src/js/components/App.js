@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import Dogs from '../containers/Dogs'
 
 const App = () => (
@@ -8,4 +8,4 @@ const App = () => (
     </>
 )
 
-export default App;
+export default App

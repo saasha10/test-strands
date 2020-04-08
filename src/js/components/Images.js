@@ -1,4 +1,4 @@
-import React, { Component } from "react"
+import React, { Component } from 'react'
 import size from 'lodash/size'
 import Chart from './ChartPie'
 import { URL_IMAGE, IMAGES } from '../constants'
