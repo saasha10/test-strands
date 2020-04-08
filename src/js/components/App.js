@@ -1,8 +1,8 @@
 import React from 'react';
-import Post from '../containers/Post'
+import Dogs from '../containers/Dogs'
 
 const App = () => (
-    <Post />
+    <Dogs />
 )
 
 export default App;
