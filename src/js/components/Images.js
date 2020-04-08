@@ -15,8 +15,7 @@ export default class Images extends Component {
     }
 
     render() {
-        const dogs = this.props.dogs
-        const dogsImages = this.props.dogsImages
+        const {dogs, dogsImages} = this.props
         const chartIsReady = size(dogs) === size(dogsImages)
 
         return (
