@@ -1,5 +1,6 @@
-import { MESSAGE, DATA_LOADING, DATA_IMAGE_LOADING } from '../constants/action-types';
-//---------------------------------------------------------------------------
+import { MESSAGE } from '../constants'
+import { DATA_LOADING, DATA_IMAGE_LOADING } from '../constants/action-types'
+
 export const fetchData = bool => ({
     type: DATA_LOADING,
     payload: bool
