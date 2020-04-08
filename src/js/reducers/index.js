@@ -1,7 +1,8 @@
-import { DATA_LOADING, DATA_LOADED, DATA_IMAGE_LOADED } from '../constants/action-types'
+import { DATA_LOADING, DATA_LOADED, DATA_IMAGE_LOADING, DATA_IMAGE_LOADED } from '../constants/action-types'
 
 const initialState = {
     loading: true,
+    loadingImage: true,
     dogs: {},
     dogs_images: {}
 }
@@ -17,6 +18,10 @@ function rootReducer(state = initialState, action) {
                 dogs: action.payload,
                 loading: false
             });
+        case DATA_IMAGE_LOADING:
+            return Object.assign({}, state, {
+                loadingImage: action.payload
+            })
         case DATA_IMAGE_LOADED:
             return Object.assign({}, state, {
                 dogs_images: {
